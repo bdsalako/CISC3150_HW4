@@ -1,0 +1,40 @@
+import java.util.*;
+public class Driver {
+	
+	public static void main(String[] arg){
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter a word: ");
+		String newStr = s.nextLine();
+		System.out.println("Enter another word: ");
+		String newStr2 = s.nextLine();
+		MyString str = new MyString(newStr.toCharArray());
+		MyString str2 = new MyString(newStr2.toCharArray());
+		System.out.println("\nOUTPUT");
+		//Print my str
+		System.out.println(str.getMyString());
+		
+		//Print the length of str
+		System.out.println( str.length());
+		
+		//Print the character at index
+		System.out.println(str.charAt(3));
+		
+		//Ptint substring of str
+		System.out.println(str.substring(2, 7));
+		
+		//Print the lowercase of str
+		System.out.println(str.toLowerCase());
+		
+		//Print the uppercase of str
+		System.out.println(str.toUpperCase());
+		
+		//Print true or false if str is same as strs
+		System.out.println(str.equals(str2));
+		
+		//Print the string rep of int
+		System.out.println(MyString.valueOf(6));
+		
+		
+	}
+
+}
