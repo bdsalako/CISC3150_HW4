@@ -1,0 +1,14 @@
+Enter a word: 
+international
+Enter another word: 
+testing
+
+OUTPUT
+international
+13
+e
+terna
+international
+INTERNATIONAL
+false
+6
