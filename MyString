@@ -1,0 +1,86 @@
+import java.util.*;
+import java.lang.String;
+public class MyString {
+	 char str[];
+
+	public MyString(char[] str) {
+		String s = new String(str);
+		int len = s.length();
+		this.str = new char[len];
+		for (int i = 0; i<len; i++)
+			this.str[i] = str[i];
+	}
+	
+	public int length(){
+		int i = 0;
+		for(char c : str)
+			i++;
+		return i;
+	}
+	
+	public char charAt(int index){
+		if(index > str.length || index < 0){
+			System.out.println("Out of Bound Error");
+			System.exit(0);
+		} 
+		return str[index];
+	}
+
+	public char[] getMyString() {
+		return str;
+	}
+	
+	public char[] substring(int begin, int end){
+		if(end > str.length-1){
+			System.out.println("Out of Bound Error");
+			System.exit(0);
+		}
+		char subStr[] = new char [end - begin];
+		int temp = 0;
+		for (int i = begin; i < end; i++){
+			subStr[temp] = str[i];
+			temp++;
+		}
+		return subStr;
+	}
+
+	public char[] toLowerCase(){
+		char [] lowerCase= new char[str.length];
+		for(int i = 0; i<str.length; i++){
+			if(str[i] > (char) 96)
+				lowerCase[i] = str[i];
+			if(str[i] < 96)
+				lowerCase[i] = (char) (str[i] + 32);
+		}
+		return lowerCase;
+	}
+
+	public char[] toUpperCase(){
+		char [] upperCase= new char[str.length];
+		for(int i = 0; i<str.length; i++){
+			if(str[i] < (char) 90)
+				upperCase[i] = str[i];
+			if(str[i] > 96)
+				upperCase[i] = (char) (str[i] - 32);
+		}
+		return upperCase;
+	}
+	
+	public boolean equals(char[] str){
+		boolean bool = false;
+		for(int i = 0; i < str.length; i++){
+			if(this.str[i] != str[i]){
+				bool = false;
+				break;
+			}
+			if(this.str[i] == str[i])
+				bool = true;
+		}
+		return bool;
+	}
+		
+	public static String valueOf(int i){
+		return i+"";
+		
+	}
+}
